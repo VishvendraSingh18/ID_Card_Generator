@@ -18,9 +18,8 @@ public class IDCardController {
     private IDCardService idCardService;
 
     @PostMapping("/upload")
-    public IDCard uploadIDCard(@RequestParam("IDCard") IDCard request) {
-        IDCard idCard = new IDCard(request.getName(), request.getRollNumber(), request.getBloodGroup(),
-                request.getValidUpto(), request.getCourse(), request.getDeveloperId());
-        return idCardService.saveIDCard(idCard);
+    public IDCard uploadIDCard(@RequestBody IDCard request) {
+
+        return idCardService.saveIDCard(request);
     }
 }

@@ -16,6 +16,9 @@ document.getElementById('idCardForm').addEventListener('submit', async function(
     try {
         const response = await fetch('http://localhost:8080/api/idcards/upload', {
             method: 'POST',
+            "headers":{
+                "content-type":"application/json"
+            },
             body: JSON.stringify(idCardData)
         });
 
